@@ -9,8 +9,8 @@ Scenario Outline: Logar na plataforma com sucesso
     Then  "acao" deverá entrar no sistema
 
     Examples:
-    |           email                          | password    | acao |
-    | maicon.santos+teste01@elumini-it.com.br  |  teste      | nao  |
-    | maicon.santos+teste01@elumini-it.com.br  |  null       | nao  |                        
-    |                  null                    |  teste      | nao  |
-    | maicon.santos+teste01@elumini-it.com.br  |  Funbio2020 | sim  |                                                                                
+    |           email                          | password     | acao |
+    | maicon.santos+teste01@elumini-it.com.br  |  teste       | nao  |
+    | maicon.santos+teste01@elumini-it.com.br  |  {backspace} | nao  |                        
+    |                  {backspace}                    |  teste       | nao  |
+    | maicon.santos+teste01@elumini-it.com.br  |  Funbio2020  | sim  |                                                                                

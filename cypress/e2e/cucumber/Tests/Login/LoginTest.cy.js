@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 import Login from "../../Pages/Login/action.cy"
-import Action from "../../Pages/Utils/action.cy"
 
 Given(/^que o usuario está no site backoffice da plataforma$/, () => {
 	cy.visit("")
@@ -9,8 +8,8 @@ Given(/^que o usuario está no site backoffice da plataforma$/, () => {
 
 When(/^o usuario preencher o campo "([^"]*)" e "([^"]*)"$/, (email,password) => {
 	debugger
-  Login.preencherEmail(Action.validarValorNulo(email))
-  Login.preencherSenha(Action.validarValorNulo(password))
+  Login.preencherEmail(email)
+  Login.preencherSenha(password)
 });
 
 When(/^clicar no botão logar$/, () => {
