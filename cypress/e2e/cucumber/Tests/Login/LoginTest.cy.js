@@ -17,12 +17,7 @@ When(/^clicar no botão logar$/, () => {
 });
 
 
-Then(/^"([^"]*)" deverá entrar no sistema$/, (action) => {
-	
-	if (action == "NAO"){
-        return true
-	}else{
-		return true
-	}
-	
+Then(/^não deverá logar no sistema$/, () => {
+	return true;
 });
+
