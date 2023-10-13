@@ -20,3 +20,10 @@ steps:
     npx cypress run
   displayName: 'run e2e tests'
   continueOnError: true
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/output.xml'
+    mergeTestResults: true
+    testRunTitle: 'publish test results'
