@@ -1,10 +1,6 @@
 /// <reference types="cypress" />
 import Login from "../../Pages/Login/action.cy"
-
-Given(/^que o usuario está no site backoffice da plataforma$/, () => {
-	cy.visit("")
-});
-
+import "../../Pages/Utils/Steps/commons.cy"
 
 When(/^o usuario preencher o campo "([^"]*)" e "([^"]*)"$/, (email,password) => {
 	debugger
