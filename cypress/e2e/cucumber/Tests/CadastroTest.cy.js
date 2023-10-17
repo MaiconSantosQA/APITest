@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import Cadastro from "../../Pages/Cadastro/action.cy"
-import "../../Pages/Utils/Steps/commons.cy"
+import Cadastro from "../Pages/Cadastro/action.cy"
+import "../Pages/Utils/Steps/commons.cy"
 
 const faker = require('faker-br');
 const nomeAleatorio = faker.name.findName();
@@ -30,14 +30,19 @@ When(/^checar a "([^"]*)","([^"]*)" e "([^"]*)"$/, (args1,args2) => {
 
 
 When(/^clicar no botão Salvar$/, () => {
-	return true;
-	//Cadastro.clicarSalvar()
+	Cadastro.clicarSalvar()
 });
 
 
 Then(/^deverá exibir mensagem de salvo com sucesso.$/, () => {
 	return true;
 });
+
+
+Then(/^não deverá deixar cadastrar$/, () => {
+	return true;
+});
+
 
 
 

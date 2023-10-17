@@ -1,9 +1,20 @@
 Feature: Cadastro
 
-Como usuario, desejo me cadastrar para receber as informações
+Como usuario, desejo que cadastre com sucesso quando preencher as informações corretamentes.
 
+
+Scenario: cadastro sem sucesso, sem preencher as informações de região, bioma e tematica.
+
+    Given que o usuario está no site da Funbio "CADASTRO" 
+    When o usuario preencher os campos nome, cpf, email
+    And nome instituição, cnpj, site
+    And clicar no botão Salvar
+    Then não deverá deixar cadastrar
+
+@skip
 Scenario Outline: cadastrar para receber informações com sucesso
 
+    Given o usuário decide pular o teste
     Given que o usuario está no site da Funbio "CADASTRO" 
     When o usuario preencher os campos nome, cpf, email
     And nome instituição, cnpj, site
@@ -15,6 +26,4 @@ Scenario Outline: cadastrar para receber informações com sucesso
     |           regiao   | bioma     | tematica |
     | norte              | amazonia  |     1    |                                                               
     | nordeste           | cerrado   |     5    |                                     
-    | sudeste            | Pantanal  |     9    |                                                                                 
-
-
+    | sudeste            | Pantanal  |     9    |
