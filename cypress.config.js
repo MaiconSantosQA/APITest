@@ -13,7 +13,7 @@ module.exports = defineConfig({
   },
   reporter: 'junit',
   reporterOptions: {
-    mochaFile:'results/output.xml',
+    mochaFile:'results/output-[hash].xml',
     toConsole: false
   },
   env: {
