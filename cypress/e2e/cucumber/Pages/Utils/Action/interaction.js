@@ -1,25 +1,19 @@
 const el = require("../elements").ELEMENTS;
-const link = require("../Constants/link").LINK;
+import mapper from "../Action/constantsMapper"
 
 class UTILSACTION {
-
   clicarCbxPorValor(value){
-    cy.get(el.cbxValue(value)).should("be.visible").click();
+    cy.get(el.cbxValue.replace('${value}', value)).should("be.enabled").click();
   }
 
-  defineLink(systemLink) {
-    switch (systemLink) {
-      case 'ADMIN':
-        return link.ADMIN;
-      case 'PORTAL':
-        return link.PORTAL;
-      case 'CADASTRO':
-        return link.CADASTRO;
-      default:
-        break;
-    }
+  clicarCBXBioma(bioma){
+    cy.log(mapper.defineBioma(bioma))
+    this.clicarCbxPorValor(mapper.defineBioma(bioma))
   }
 
+  clicarCBXTema(tema){
+   cy.xpath(el.xpathCbxTema.replace('${value}', mapper.defineTema(tema))).should("be.enabled").click();
+  }
 }
 
 export default new UTILSACTION();

@@ -5,5 +5,3 @@ export const REGION = {
     CENTRO: "centro-oeste",
     SUL: "sul"
   };
-
-export { REGION };

@@ -15,6 +15,15 @@ class UTILSVALIDATE {
       });
   }
 
+  validarDuasMensagens(msg1,msg2){
+    cy.contains(msg1).should('be.visible')
+    cy.contains(msg2).should('be.visible')
+  }
+
+  validarMensagem(msg){
+    cy.contains(msg).should('be.visible')
+  }
+
 }
 
 export default new UTILSVALIDATE();

@@ -7,5 +7,3 @@ export const BIOME = {
     PAMPA: "6",
     PANTANAL: "7"
   };
-
-  export { REGION };

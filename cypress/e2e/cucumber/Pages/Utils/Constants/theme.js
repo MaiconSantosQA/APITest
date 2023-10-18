@@ -10,5 +10,3 @@ export const THEME = {
     POVO: "Povos e comunidades tradicionais",
     RESTAURACAO: "Restauração florestal"
   };
-
-  export { THEME };

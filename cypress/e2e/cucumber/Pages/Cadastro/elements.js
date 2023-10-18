@@ -7,5 +7,6 @@ export const ELEMENTS = {
     txtSite: "[name='instituicao[site]']",
     cbxReceberInfo: "[name='queroReceberInformacoesSobreChamadas']",
     cbxReceberNoticias: "[name='queroReceberNoticias']",
-    btnSalvar: "button.MuiButton-containedPrimary[type='submit']"
+    btnSalvar: "button.MuiButton-containedPrimary[type='submit']",
+    xpathBtnOk: "//button[text()='OK']"
   };

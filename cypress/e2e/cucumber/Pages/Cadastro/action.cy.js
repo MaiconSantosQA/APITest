@@ -1,4 +1,5 @@
 const el = require("./elements").ELEMENTS;
+import validate from "../Utils/Action/validate"
 
 class LOGIN {
 
@@ -37,6 +38,26 @@ class LOGIN {
   clicarSalvar() {
       cy.get(el.btnSalvar).should("be.visible").click();
     }
+
+  validarMsgSucesso(){
+    const msgSalvoSucesso = "Informações salvas com sucesso"
+    const msgInfo = "Acesse seu email para saber mais detalhes. Caso não tenha recebido lembre-se de olhar no lixo eletrônico (spam)."
+    validate.validarDuasMensagens(msgSalvoSucesso,msgInfo)
+  }
+
+  validarMsgCpfDuplicado(){
+    const msgCpfDuplicado = "Erro"
+    const msgInfo = "CPF já cadastrado"
+    validate.validarDuasMensagens(msgCpfDuplicado,msgInfo)
+  }
+
+  clicarBtnOk() {
+    cy.xpath(el.xpathBtnOk).should("be.visible").click();
+  }
+
+  validarMsgSErro(msg){
+    validate.validarMensagem(msg)
+  }
 
 }
 

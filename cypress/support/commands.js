@@ -24,9 +24,10 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('skipTest', () => {
-  const currentTest = Cypress.mocha.getRunner().suite.ctx.currentTest;
-  if (currentTest && currentTest.parent && currentTest.parent.title && currentTest.parent.title.includes('@skip')) {
-    throw new Error('Teste pulado devido à anotação @skip');
-  }
-});
+/// <reference types="cypress-xpath" />
+
+Cypress.Commands.add('checarCbxPorValor', (valorEsperado) => {
+    cy.get(`input.PrivateSwitchBase-input[value="${valorEsperado}"][type="checkbox"]`)
+      .should('be.enabled')
+      .check();
+  });
