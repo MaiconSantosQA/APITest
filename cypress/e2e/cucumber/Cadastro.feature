@@ -18,6 +18,13 @@ Scenario: cadastro sem sucesso, preenchendo com cpf ja cadastrado.
     And clicar no botão Salvar
     Then deverá exibir mensagem de cpf ja cadastrado
 
+Scenario: cadastro sem sucesso, preenchendo até ultrapassar o limite de caractere permitido em todos os campos.
+
+    Given que o usuario está no site da Funbio "CADASTRO" 
+    When o usuario preencher os campos nome,cpf, email,nome instituição,cnpj e site com "257" caractere
+    And clicar no botão Salvar
+    Then deverá exibir mensagem de limite de caracteres para todos os campos
+
 Scenario Outline: cadastrar para receber informações com sucesso
 
     Given que o usuario está no site da Funbio "CADASTRO" 

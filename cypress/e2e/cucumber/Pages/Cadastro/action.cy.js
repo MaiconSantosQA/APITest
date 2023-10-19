@@ -58,7 +58,6 @@ class LOGIN {
   validarMsgSErro(msg){
     validate.validarMensagem(msg)
   }
-
 }
 
 export default new LOGIN();

@@ -4,7 +4,7 @@
   "description": "Testes de regressão",
   "main": "index.js",
   "scripts": {
-    "cy:open": "npx cypress open TAGS=not @ignore-this",
+    "cy:open": "npx cypress open",
     "cy:run": "npx cypress run"
   },
   "author": "Maicon Santos",

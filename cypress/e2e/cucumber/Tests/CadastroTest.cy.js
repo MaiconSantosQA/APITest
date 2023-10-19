@@ -72,3 +72,35 @@ Then(/^deverá exibir mensagem de "([^"]*)"$/, (msg) => {
 	Cadastro.validarMsgSErro(msg)
 });
 
+When(/^o usuario preencher os campos nome,cpf, email,nome instituição,cnpj e site com "([^"]*)" caractere$/, (limite) => {
+	const textoLimiteCaracatere = 'a'.repeat(limite);
+	const cpfLimite = faker.br.cpf() + textoLimiteCaracatere;
+	const cnpjLimite = faker.br.cnpj() + textoLimiteCaracatere;
+	const emailAleatorio = 'a'.repeat(limite-12) + "@hotmail.com"
+
+	Cadastro.preencherNome(textoLimiteCaracatere)
+	Cadastro.preencherCPF(cpfLimite)
+	Cadastro.preencherEmail(emailAleatorio)
+	Cadastro.preencherInstituicao(textoLimiteCaracatere)
+	Cadastro.preencherCNPJ(cnpjLimite)
+	Cadastro.preencherSite(textoLimiteCaracatere)
+});
+
+
+Then(/^deverá exibir mensagem de limite de caracteres para todos os campos$/, () => {
+	const campos = [
+	  { campo: 'NomeInstituicao', mensagem: 'O campo NomeInstituicao só aceita 256 caracteres' },
+	  { campo: 'Nome', mensagem: 'O campo Nome só aceita 255 caracteres' },
+	  { campo: 'Email', mensagem: 'O campo Email só aceita 255 caracteres' },
+	  { campo: 'Site', mensagem: 'O campo Site só aceita 256 caracteres' },
+	];
+  
+	campos.forEach(({ campo, mensagem }) => {
+	  Cadastro.validarMsgSErro(mensagem, campo);
+	});
+  });
+
+
+
+
+
