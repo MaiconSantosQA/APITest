@@ -1,5 +1,7 @@
 const el = require("./elements").ELEMENTS;
-import validate from "../../Utils/Action/validate"
+import interaction from "../../Utils/Action/interaction";
+import validate from "../../Utils/Action/validate";
+import mapper from "../../Utils/Action/constantsMapper";
 
 class LOGIN {
 
@@ -53,6 +55,14 @@ class LOGIN {
 
   clicarBtnOk() {
     cy.xpath(el.xpathBtnOk).should("be.visible").click();
+  }
+
+  clicarCBXInfo(){
+    interaction.clicarCbxPorTexto(mapper.checkBoxInfoMapper("INFO"))
+  }
+
+  clicarCBXNews(){
+    interaction.clicarCbxPorTexto(mapper.checkBoxInfoMapper("NEWS"))
   }
 
   validarMsgSErro(msg){

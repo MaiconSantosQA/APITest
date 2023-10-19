@@ -56,22 +56,6 @@ When(/^clicar no botão Salvar$/, () => {
 	Cadastro.clicarSalvar()
 });
 
-Then(/^deverá exibir mensagem de salvo com sucesso$/, () => {
-	Cadastro.validarMsgSucesso()
-});
-
-Then(/^clicar no botão ok$/, () => {
-	Cadastro.clicarBtnOk()
-});
-
-Then(/^deverá exibir mensagem de cpf ja cadastrado$/, () => {
-	Cadastro.validarMsgCpfDuplicado()
-});
-
-Then(/^deverá exibir mensagem de "([^"]*)"$/, (msg) => {
-	Cadastro.validarMsgSErro(msg)
-});
-
 When(/^o usuario preencher os campos nome,cpf, email,nome instituição,cnpj e site com "([^"]*)" caractere$/, (limite) => {
 	const textoLimiteCaracatere = 'a'.repeat(limite);
 	const cpfLimite = faker.br.cpf() + textoLimiteCaracatere;
@@ -86,6 +70,14 @@ When(/^o usuario preencher os campos nome,cpf, email,nome instituição,cnpj e s
 	Cadastro.preencherSite(textoLimiteCaracatere)
 });
 
+When(/^deschecar noticias "([^"]*)" e informações "([^"]*)"$/, (cbxInfo,cbxNews) => {
+	if(cbxInfo === "true"){
+		Cadastro.clicarCBXInfo()
+	  }
+	  if(cbxNews === "true"){
+		Cadastro.clicarCBXNews()
+	  }
+});
 
 Then(/^deverá exibir mensagem de limite de caracteres para todos os campos$/, () => {
 	const campos = [
@@ -98,9 +90,20 @@ Then(/^deverá exibir mensagem de limite de caracteres para todos os campos$/, (
 	campos.forEach(({ campo, mensagem }) => {
 	  Cadastro.validarMsgSErro(mensagem, campo);
 	});
-  });
+});
 
-
-
-
-
+Then(/^deverá exibir mensagem de salvo com sucesso$/, () => {
+	Cadastro.validarMsgSucesso()
+});
+	
+Then(/^clicar no botão ok$/, () => {
+	Cadastro.clicarBtnOk()
+});
+	
+Then(/^deverá exibir mensagem de cpf ja cadastrado$/, () => {
+	Cadastro.validarMsgCpfDuplicado()
+});
+	
+Then(/^deverá exibir mensagem de "([^"]*)"$/, (msg) => {
+	Cadastro.validarMsgSErro(msg)
+});

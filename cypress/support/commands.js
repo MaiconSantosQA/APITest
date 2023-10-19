@@ -25,9 +25,3 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 /// <reference types="cypress-xpath" />
-
-Cypress.Commands.add('checarCbxPorValor', (valorEsperado) => {
-    cy.get(`input.PrivateSwitchBase-input[value="${valorEsperado}"][type="checkbox"]`)
-      .should('be.enabled')
-      .check();
-  });

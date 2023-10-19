@@ -3,11 +3,11 @@ import mapper from "../Action/constantsMapper"
 import interaction from "../Action/interaction"
 
 Given(/^que o usuario está no site da Funbio "([^"]*)"$/, (link) => {
-	cy.visit(mapper.defineLink(link))
+	cy.visit(mapper.linkMapper(link))
 });
 
 When(/^checar a "([^"]*)" , "([^"]*)" , "([^"]*)"$/, (regiao,bioma,tema) => {
-	cy.checarCbxPorValor(regiao)
-	interaction.clicarCBXBioma(bioma)
-	interaction.clicarCBXTema(tema)
+	interaction.clicarCbxPorValor(mapper.regiaoMapper(regiao))
+	interaction.clicarCbxPorValor(mapper.biomaMapper(bioma))
+	interaction.clicarCbxPorTexto(mapper.temaMapper(tema))
 });
