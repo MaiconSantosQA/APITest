@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import Cadastro from "../Pages/Cadastro/action.cy"
+import Cadastro from "../Pages/Portal/Cadastro/action.cy"
 import "../Pages/Utils/Steps/commons.cy"
 
 const faker = require('faker-br');

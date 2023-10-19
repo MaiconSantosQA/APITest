@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import Login from "../Pages/Login/action.cy"
+import Login from "../Pages/Backoffice/Login/action.cy"
 import "../Pages/Utils/Steps/commons.cy"
 
 When(/^o usuario preencher o campo "([^"]*)" e "([^"]*)"$/, (email,password) => {

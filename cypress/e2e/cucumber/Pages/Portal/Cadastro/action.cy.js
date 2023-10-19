@@ -1,5 +1,5 @@
 const el = require("./elements").ELEMENTS;
-import validate from "../Utils/Action/validate"
+import validate from "../../Utils/Action/validate"
 
 class LOGIN {
 
