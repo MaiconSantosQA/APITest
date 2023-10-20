@@ -66,7 +66,7 @@ class LOGIN {
   }
 
   validarMsgSErro(msg){
-    validate.validarMensagem(msg)
+    validate.validarTextoEmTela(msg)
   }
 
   validarCbxNoticiasDefault(){

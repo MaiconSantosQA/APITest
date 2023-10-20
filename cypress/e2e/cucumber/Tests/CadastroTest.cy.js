@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 import Cadastro from "../Pages/Portal/Cadastro/action.cy"
+import validate from "../Pages/Utils/Action/validate";
 import "../Pages/Utils/Steps/commons.cy"
 
 const faker = require('faker-br');
@@ -70,7 +71,7 @@ When(/^o usuario preencher os campos nome,cpf, email,nome instituição,cnpj e s
 	Cadastro.preencherSite(textoLimiteCaracatere)
 });
 
-When(/^deschecar noticias "([^"]*)" e informações "([^"]*)"$/, (cbxInfo,cbxNews) => {
+When(/^desselecionar noticias "([^"]*)" e informações "([^"]*)"$/, (cbxInfo,cbxNews) => {
 	if(cbxInfo === "true"){
 		Cadastro.clicarCBXInfo()
 	  }
@@ -108,6 +109,26 @@ Then(/^deverá exibir mensagem de "([^"]*)"$/, (msg) => {
 	Cadastro.validarMsgSErro(msg)
 });
 
-Then(/^deverá exibir os checkbox noticias e informacões checados$/, () => {
+Then(/^deverá exibir os checkbox noticias e informacões selecionados$/, () => {
 	Cadastro.validarCbxNoticiasDefault()
 });
+
+
+Then(/^deverá validar os textos informativos$/, () => {
+	const textosInformativos = [
+	  "Cadastre-se",
+	  "Para receber informações",
+	  "Dados Pessoais",
+	  "Instituição em que trabalha",
+	  "Comunicação",
+	  "Selecione as regiões, biomas e linhas temáticas de seu interesse",
+	  "Região",
+	  "Biomas",
+	  "Linhas temáticas"
+	];
+  
+	textosInformativos.forEach((texto) => {
+	  validate.validarTextoEmTela(texto);
+	});
+  });
+

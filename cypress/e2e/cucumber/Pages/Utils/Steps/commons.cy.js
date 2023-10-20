@@ -6,7 +6,7 @@ Given(/^que o usuario está no site da Funbio "([^"]*)"$/, (link) => {
 	cy.visit(mapper.linkMapper(link))
 });
 
-When(/^checar a "([^"]*)" , "([^"]*)" , "([^"]*)"$/, (regiao,bioma,tema) => {
+When(/^selecionar a "([^"]*)" , "([^"]*)" , "([^"]*)"$/, (regiao,bioma,tema) => {
 	interaction.clicarCbxPorValor(mapper.regiaoMapper(regiao))
 	interaction.clicarCbxPorValor(mapper.biomaMapper(bioma))
 	interaction.clicarCbxPorTexto(mapper.temaMapper(tema))

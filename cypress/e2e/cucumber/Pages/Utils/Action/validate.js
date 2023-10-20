@@ -20,10 +20,9 @@ class UTILSVALIDATE {
     cy.contains(msg2).should('be.visible')
   }
 
-  validarMensagem(msg){
+  validarTextoEmTela(msg){
     cy.contains(msg).should('be.visible')
   }
-
 }
 
 export default new UTILSVALIDATE();
