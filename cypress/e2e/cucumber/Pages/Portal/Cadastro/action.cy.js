@@ -68,6 +68,11 @@ class LOGIN {
   validarMsgSErro(msg){
     validate.validarMensagem(msg)
   }
+
+  validarCbxNoticiasDefault(){
+    interaction.verificarStatusCBX(mapper.checkBoxInfoMapper("INFO"), "checked")
+    interaction.verificarStatusCBX(mapper.checkBoxInfoMapper("NEWS"), "checked")
+  }
 }
 
 export default new LOGIN();

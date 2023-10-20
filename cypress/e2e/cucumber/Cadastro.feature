@@ -10,6 +10,11 @@ Scenario: cadastro com sucesso, sem preencher as informações de região, bioma
     And clicar no botão Salvar
     Then deverá exibir mensagem de salvo com sucesso
 
+Scenario: validar os checkbox ativos ao carregar a tela.
+
+    Given que o usuario está no site da Funbio "CADASTRO" 
+    Then deverá exibir os checkbox noticias e informacões checados
+
 Scenario: cadastro sem sucesso, preenchendo com cpf ja cadastrado.
 
     Given que o usuario está no site da Funbio "CADASTRO" 

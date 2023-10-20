@@ -6,7 +6,17 @@ class UTILSACTION {
   }
 
   clicarCbxPorTexto(value){
-   cy.xpath(el.xpathCbxTema.replace('${value}',value)).should("be.enabled").click();
+   cy.xpath(el.xpathCbxForValue.replace('${value}',value)).should("be.enabled").click();
+  }
+
+  verificarStatusCBX(value, status) {
+    const checkbox = cy.xpath(el.xpathCbxForValue.replace('${value}', value));
+  
+    if (status === "checked") {
+      checkbox.should("be.checked");
+    } else {
+      checkbox.should("not.be.checked");
+    }
   }
 }
 

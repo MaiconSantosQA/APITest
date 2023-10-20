@@ -107,3 +107,7 @@ Then(/^deverá exibir mensagem de cpf ja cadastrado$/, () => {
 Then(/^deverá exibir mensagem de "([^"]*)"$/, (msg) => {
 	Cadastro.validarMsgSErro(msg)
 });
+
+Then(/^deverá exibir os checkbox noticias e informacões checados$/, () => {
+	Cadastro.validarCbxNoticiasDefault()
+});
