@@ -23,7 +23,7 @@ O Cypress é uma ferramenta de teste end-to-end de código aberto que simplifica
 
 1. Clone este repositório:
 
-   git clone https://funbio@dev.azure.com/funbio/C%C3%A9rebro%203/_git/C3_TestesAutomatizados
+   git clone 
    cd repositorio-projeto
    npm install
 
@@ -32,6 +32,9 @@ npm run cy:run
 
 ## Executando-cypress
 npm run cy:open
+
+## Executando-testes-com-report
+npx cypress run --env allure=true
 
 
 If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
